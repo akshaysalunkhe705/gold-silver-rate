@@ -2,7 +2,7 @@ import 'package:get_it/get_it.dart';
 
 import 'package:get_it/get_it.dart';
 
-import 'scoped_model/RateModel.dart';
+import 'scoped_model/rate_model.dart';
 
 GetIt locator = GetIt.instance;
 

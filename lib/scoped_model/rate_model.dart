@@ -1,23 +1,24 @@
 import 'dart:ffi';
 import 'package:dio/dio.dart';
-import 'package:scoped_model/scoped_model.dart';
+import 'package:goldsilverrate/enum/status_indicator.dart';
+import 'base_model.dart';
 
-class RateModel extends Model {
+class RateModel extends BaseModel {
   bool isLoading;
 
-  Float gold_sale_rate,
+  double gold_sale_rate,
       gold_buy_rate,
       silver_sale_rate,
       silver_buy_rate,
       buy_gold_gst,
       buy_silver_gst;
 
-  Float get goldSaleRate => gold_sale_rate;
-  Float get goldBuyRate => gold_buy_rate;
-  Float get silverSaleRate => silver_sale_rate;
-  Float get silverBuyRate => silver_buy_rate;
-  Float get buyGoldGST => buy_gold_gst;
-  Float get buySilverGST => buy_silver_gst;
+  double get goldSaleRate => gold_sale_rate;
+  double get goldBuyRate => gold_buy_rate;
+  double get silverSaleRate => silver_sale_rate;
+  double get silverBuyRate => silver_buy_rate;
+  double get buyGoldGST => buy_gold_gst;
+  double get buySilverGST => buy_silver_gst;
 
   void set setGoldSilverRate(value) => gold_sale_rate = value;
   void set setGoldBuyRate(value) => gold_buy_rate = value;
@@ -27,9 +28,12 @@ class RateModel extends Model {
   void set setBuySilverGST(value) => buy_silver_gst = value;
 
   Future fetchRates() async {
+    setState(StatusIndicator.LOADING);
     var response = await Dio().get(
         "http://nghosting.in/api/metal-rate/index.php?key=59e2c476668a834098fb7d17bf38345e");
 
+    print(response);
     notifyListeners();
+    setState(StatusIndicator.COMPLETE);
   }
 }
