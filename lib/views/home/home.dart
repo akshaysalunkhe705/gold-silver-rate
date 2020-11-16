@@ -3,12 +3,12 @@ import 'package:goldsilverrate/enum/status_indicator.dart';
 import 'package:goldsilverrate/views/base_view.dart';
 import 'package:goldsilverrate/widgets/loading_widgets.dart';
 import 'package:goldsilverrate/widgets/rate_box.dart';
-import '../../scoped_model/rate_model.dart';
+import '../../scoped_model/rate_scoped_model.dart';
 
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BaseView<RateModel>(
+    return BaseView<RateScopedModel>(
       builder: (context, child, model) => SafeArea(
         child: LoadingWidget(
           show: model.state == StatusIndicator.LOADING,
@@ -18,16 +18,44 @@ class Home extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  Text("Gold Rate"),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Gold Rate"),
+                      RateBox(
+                        model.gold_buy_rate != null
+                            ? model.gold_buy_rate
+                            : "0.0",
+                      ),
+                      RateBox(
+                        model.gold_sale_rate != null
+                            ? model.gold_sale_rate
+                            : "0.0",
+                      ),
+                      RateBox(
+                        model.buy_gold_gst != null ? model.buy_gold_gst : "0.0",
+                      ),
                     ],
                   ),
+                  Text("Silver Rate"),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Silver Rate"),
+                      RateBox(
+                        model.silver_buy_rate != null
+                            ? model.silver_buy_rate
+                            : "0.0",
+                      ),
+                      RateBox(
+                        model.silver_sale_rate != null
+                            ? model.silver_sale_rate
+                            : "0.0",
+                      ),
+                      RateBox(
+                        model.buy_silver_gst != null
+                            ? model.buy_silver_gst
+                            : "0.0",
+                      ),
                     ],
                   ),
                 ],
