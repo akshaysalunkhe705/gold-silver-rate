@@ -33,6 +33,11 @@ class Home extends StatelessWidget {
                 ],
               ),
             ),
+            floatingActionButton: FloatingActionButton(
+              onPressed: () async {
+                model.fetchRates();
+              },
+            ),
           ),
         ),
       ),
