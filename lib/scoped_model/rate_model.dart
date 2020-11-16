@@ -30,10 +30,9 @@ class RateModel extends BaseModel {
   Future fetchRates() async {
     setState(StatusIndicator.LOADING);
     var response = await Dio().get(
-        "http://nghosting.in/api/metal-rate/index.php?key=59e2c476668a834098fb7d17bf38345e");
-
+        "https://nghosting.in/api/metal-rate/index.php?key=59e2c476668a834098fb7d17bf38345e");
     print(response);
-    notifyListeners();
     setState(StatusIndicator.COMPLETE);
+    notifyListeners();
   }
 }

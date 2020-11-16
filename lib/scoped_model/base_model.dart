@@ -6,7 +6,7 @@ class BaseModel extends Model {
   StatusIndicator get state => _state;
 
   setState(StatusIndicator newState) {
-    StatusIndicator _state = newState;
+    _state = newState;
     notifyListeners();
   }
 }

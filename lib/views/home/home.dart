@@ -9,21 +9,33 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseView<RateModel>(
-      builder: (context, child, model) => LoadingWidget(
-        show: model.state == StatusIndicator.LOADING,
-        child: Scaffold(
-          body: Container(
-            child: RateBox(10.3),
+      builder: (context, child, model) => SafeArea(
+        child: LoadingWidget(
+          show: model.state == StatusIndicator.LOADING,
+          child: Scaffold(
+            body: Container(
+              alignment: Alignment.center,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("Gold Rate"),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("Silver Rate"),
+                    ],
+                  ),
+                ],
+              ),
+            ),
           ),
         ),
       ),
     );
   }
 }
-
-// gold_sale_rate,
-// gold_buy_rate,
-// silver_sale_rate,
-// silver_buy_rate,
-// buy_gold_gst,
-// buy_silver_gst;
