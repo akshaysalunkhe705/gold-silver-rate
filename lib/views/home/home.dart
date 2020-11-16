@@ -23,16 +23,19 @@ class Home extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       RateBox(
+                        "Buy Rate",
                         model.gold_buy_rate != null
                             ? model.gold_buy_rate
                             : "0.0",
                       ),
                       RateBox(
+                        "Sale Rate",
                         model.gold_sale_rate != null
                             ? model.gold_sale_rate
                             : "0.0",
                       ),
                       RateBox(
+                        "Buy Gst",
                         model.buy_gold_gst != null ? model.buy_gold_gst : "0.0",
                       ),
                     ],
@@ -42,16 +45,19 @@ class Home extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       RateBox(
+                        "Buy Rate",
                         model.silver_buy_rate != null
                             ? model.silver_buy_rate
                             : "0.0",
                       ),
                       RateBox(
+                        "Sale Rate",
                         model.silver_sale_rate != null
                             ? model.silver_sale_rate
                             : "0.0",
                       ),
                       RateBox(
+                        "Buy Gst",
                         model.buy_silver_gst != null
                             ? model.buy_silver_gst
                             : "0.0",

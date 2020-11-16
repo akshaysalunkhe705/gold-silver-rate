@@ -19,7 +19,7 @@ class RateScopedModel extends BaseModel {
 
     gold_buy_rate = response.data['sell_gold_rate'];
     gold_sale_rate = response.data['buy_gold_rate'];
-    silver_buy_rate = response.data['sell_silver_rate'];
+    silver_sale_rate = response.data['sell_silver_rate'];
     silver_buy_rate = response.data['buy_silver_rate'];
     buy_gold_gst = response.data['buy_gold_gst'];
     buy_silver_gst = response.data['buy_silver_gst'];
