@@ -19,7 +19,7 @@ class LoadingWidget extends StatelessWidget {
                   child: Container(
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
-                      color: Colors.black54,
+                      color: Colors.black87,
                     ),
                     child: CircularProgressIndicator(),
                   ),

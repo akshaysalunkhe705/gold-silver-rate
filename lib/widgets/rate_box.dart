@@ -12,6 +12,12 @@ class RateBox extends StatelessWidget {
     return Container(
       margin: EdgeInsets.all(10.0),
       padding: EdgeInsets.all(10.0),
+      decoration: BoxDecoration(
+        border: Border.all(
+          width: 1,
+        ),
+        borderRadius: BorderRadius.circular(10.0),
+      ),
       child: Column(
         children: [
           Text(
