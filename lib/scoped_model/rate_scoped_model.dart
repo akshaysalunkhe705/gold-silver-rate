@@ -1,7 +1,5 @@
-import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:goldsilverrate/enum/status_indicator.dart';
-import 'package:goldsilverrate/model/RateModel.dart';
 import 'base_scoped_model.dart';
 
 class RateScopedModel extends BaseModel {

@@ -10,11 +10,23 @@ class RateBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.all(10.0),
       padding: EdgeInsets.all(10.0),
       child: Column(
         children: [
-          Text(this.title),
-          Text(this.rate),
+          Text(
+            this.title,
+            style: TextStyle(
+              fontSize: 15.0,
+            ),
+          ),
+          Text(
+            this.rate,
+            style: TextStyle(
+              color: Colors.grey,
+              fontSize: 15.0,
+            ),
+          ),
         ],
       ),
     );

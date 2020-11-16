@@ -40,6 +40,7 @@ class Home extends StatelessWidget {
                       ),
                     ],
                   ),
+                  Container(height: 50.0),
                   Text("Silver Rate"),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -67,7 +68,8 @@ class Home extends StatelessWidget {
                 ],
               ),
             ),
-            floatingActionButton: FloatingActionButton(
+            floatingActionButton: FlatButton(
+              child: Text("REFRESH"),
               onPressed: () async {
                 model.fetchRates();
               },
